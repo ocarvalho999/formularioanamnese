@@ -245,7 +245,8 @@ export default function Quiz() {
       if (SHEET_WEBHOOK) {
         await fetch(SHEET_WEBHOOK, {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          mode: "no-cors",
+          headers: { "Content-Type": "text/plain" },
           body: JSON.stringify({
             timestamp: new Date().toISOString(),
             nome: lead.nome,
