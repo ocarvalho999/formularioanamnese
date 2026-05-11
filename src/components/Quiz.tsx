@@ -72,13 +72,12 @@ const QUESTIONS: Question[] = [
   {
     id: "urgencia_interesse",
     title:
-      "Se você pudesse aumentar seu faturamento em R$10.000+ nos próximos 90 dias, qual seria seu nível de interesse?",
+      "Se você pudesse aumentar seu faturamento líquido em +R$40.000 nos próximos 90 dias, qual seria seu nível de interesse?",
     subtitle: "Seja honesto — isso define se faz sentido conversarmos",
     choices: [
       { value: "muito-alto", label: "Muito alto! Começaria já", sub: "Pronto pra agir", score: 3 },
       { value: "alto", label: "Alto, mas preciso pensar", sub: "Interessado", score: 3 },
       { value: "medio", label: "Médio, depende do investimento", sub: "Hesitante", score: 2 },
-      { value: "baixo", label: "Baixo, acho caro", sub: "Sem interesse agora", score: 1 },
     ],
   },
   {
@@ -90,7 +89,6 @@ const QUESTIONS: Question[] = [
       { value: "totalmente", label: "Sim, totalmente aberto a mudanças", score: 3 },
       { value: "entender", label: "Sim, mas preciso entender bem antes", score: 3 },
       { value: "talvez", label: "Talvez, depende da estratégia", score: 2 },
-      { value: "nao", label: "Não, prefiro continuar como está", score: 1 },
     ],
   },
   {
@@ -113,7 +111,6 @@ const QUESTIONS: Question[] = [
       { value: "clonar", label: "Sim! Quero clonar esse resultado", sub: "Pronto pra reunião", score: 3 },
       { value: "socio", label: "Sim, mas preciso confirmar com meu sócio", sub: "Decisão compartilhada", score: 3 },
       { value: "talvez", label: "Talvez, depende dos detalhes", sub: "Curioso", score: 2 },
-      { value: "nao", label: "Não tenho interesse agora", sub: "Não é o momento", score: 1 },
     ],
   },
 ];
