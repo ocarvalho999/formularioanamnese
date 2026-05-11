@@ -14,6 +14,13 @@ import {
   Zap,
 } from "lucide-react";
 
+const fbq = (type: "track" | "trackCustom", event: string, params?: Record<string, unknown>) => {
+  try {
+    if (typeof (window as unknown as { fbq?: Function }).fbq === "function")
+      (window as unknown as { fbq: Function }).fbq(type, event, params);
+  } catch { /* ignore */ }
+};
+
 type LeadData = {
   nome: string;
   whatsapp: string;
@@ -211,6 +218,7 @@ export default function Quiz() {
   const goNext = () => {
     if (step === 0) {
       if (!validateLead()) return;
+      fbq("track", "CompleteRegistration");
       playPing(740);
       setFeedback("Ótimo! Você está na Etapa 2 de 5 🚀");
       setTimeout(() => setFeedback(null), 1600);
@@ -219,6 +227,7 @@ export default function Quiz() {
     }
     if (currentQuestion && !currentAnswered) return;
     if (step < TOTAL_QUESTIONS) {
+      if (step === 3) fbq("track", "ViewContent");
       const msg = ENCOURAGEMENTS[Math.min(step - 1, ENCOURAGEMENTS.length - 1)];
       setFeedback(msg);
       setTimeout(() => setFeedback(null), 1500);
@@ -257,6 +266,7 @@ export default function Quiz() {
     } catch {
       // não bloqueia o fluxo se o envio falhar
     }
+    fbq("trackCustom", "QuizCompleto", { score });
     setSubmitting(false);
     triggerCelebration();
     playPing(1100);
@@ -668,7 +678,12 @@ function FinalStep({ lead, isHotLead }: { lead: LeadData; isHotLead: boolean }) 
       </div>
 
       <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
-        <a href={calendarUrl} target="_blank" rel="noreferrer">
+        <a
+          href={calendarUrl}
+          target="_blank"
+          rel="noreferrer"
+          onClick={() => fbq("track", "Schedule")}
+        >
           <Button
             size="lg"
             className="bg-gradient-primary text-primary-foreground hover:brightness-110 transition-all shadow-glow font-bold px-8 pulse-glow w-full sm:w-auto"
