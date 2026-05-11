@@ -238,7 +238,7 @@ export default function Quiz() {
   const submit = async () => {
     setSubmitting(true);
     try {
-      const SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycbzU_9P4w7ZZjqy7jyXi8NWGJWpubfm01AYgyLI1f0b6PptduitTu1BzSa5Gv65yyUeJkQ/exec";
+      const SHEET_WEBHOOK = "https://script.google.com/macros/s/AKfycbwxQoo6BhDzF5DDCjCDvCiOSj-J67hE7DZwBrq9J28ZS3wAotHHKFfC0cYLAdQ60wxg/exec";
       if (SHEET_WEBHOOK) {
         await fetch(SHEET_WEBHOOK, {
           method: "POST",
