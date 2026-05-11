@@ -288,7 +288,7 @@ export default function Quiz() {
         <div className="text-center mb-8 slide-in-right">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-card/60 backdrop-blur border border-primary/30 text-xs uppercase tracking-wider text-primary font-bold mb-4">
             <Sparkles className="w-3.5 h-3.5" />
-            Diagnóstico exclusivo · Bruno Carvalho
+            Diagnóstico Faturamento 2x · Find Impulso
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Vamos descobrir o{" "}
