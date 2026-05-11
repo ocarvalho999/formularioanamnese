@@ -654,7 +654,8 @@ function FinalStep({ lead, isHotLead }: { lead: LeadData; isHotLead: boolean }) 
         </h2>
         <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
           {isHotLead
-            ? "Pela análise do seu perfil, com a estratégia certa você pode adicionar R$60 mil ou mais em faturamento nos próximos 90 dias. Agende agora um bate papo BREVE com nosso especialista."}
+            ? "Pela análise do seu perfil, com a estratégia certa você pode adicionar R$60 mil ou mais em faturamento nos próximos 90 dias. Agende agora um bate papo BREVE com nosso especialista."
+            : "Seu perfil tem potencial. Vamos conversar rapidamente para entender como aplicar a estratégia certa na sua clínica."}
         </p>
       </div>
 
