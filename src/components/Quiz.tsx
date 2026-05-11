@@ -604,10 +604,6 @@ function QuestionBlock({
 function FinalStep({ lead, isHotLead }: { lead: LeadData; isHotLead: boolean }) {
   const firstName = lead.nome.split(" ")[0] || "você";
   const calendarUrl = "https://calendly.com/brunocarvalho/diagnostico";
-  const whatsappMsg = encodeURIComponent(
-    `Olá Bruno! Acabei de fazer o diagnóstico no site. Meu nome é ${lead.nome} e quero agendar a reunião de estratégia.`,
-  );
-  const whatsappUrl = `https://wa.me/5511999999999?text=${whatsappMsg}`;
 
   return (
     <div className="text-center space-y-6 quiz-pop">
@@ -653,16 +649,7 @@ function FinalStep({ lead, isHotLead }: { lead: LeadData; isHotLead: boolean }) 
             className="bg-gradient-primary text-primary-foreground hover:brightness-110 transition-all shadow-glow font-bold px-8 pulse-glow w-full sm:w-auto"
           >
             <Calendar className="w-4 h-4" />
-            Agendar reunião com Bruno
-          </Button>
-        </a>
-        <a href={whatsappUrl} target="_blank" rel="noreferrer">
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-primary/40 hover:bg-primary/10 hover:border-primary w-full sm:w-auto"
-          >
-            Falar no WhatsApp
+            Agendar reunião estratégica
           </Button>
         </a>
       </div>
