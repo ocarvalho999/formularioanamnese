@@ -231,7 +231,32 @@ export default function Quiz() {
 
   const submit = async () => {
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1100));
+    try {
+      const SHEET_WEBHOOK = import.meta.env.VITE_SHEET_WEBHOOK ?? "";
+      if (SHEET_WEBHOOK) {
+        await fetch(SHEET_WEBHOOK, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            timestamp: new Date().toISOString(),
+            nome: lead.nome,
+            whatsapp: lead.whatsapp,
+            email: lead.email,
+            tempoEmpresa: lead.tempoEmpresa,
+            faturamento: lead.faturamento,
+            desafio_principal: answers.desafio_principal ?? "",
+            investimento_ads: answers.investimento_ads ?? "",
+            urgencia_interesse: answers.urgencia_interesse ?? "",
+            comprometimento: answers.comprometimento ?? "",
+            cenario_atual: answers.cenario_atual ?? "",
+            fechamento: answers.fechamento ?? "",
+            score,
+          }),
+        });
+      }
+    } catch {
+      // não bloqueia o fluxo se o envio falhar
+    }
     setSubmitting(false);
     triggerCelebration();
     playPing(1100);
