@@ -628,7 +628,7 @@ function QuestionBlock({
 
 function FinalStep({ lead, isHotLead }: { lead: LeadData; isHotLead: boolean }) {
   const firstName = lead.nome.split(" ")[0] || "você";
-  const calendarUrl = "https://calendly.com/brunocarvalho/diagnostico";
+  const calendarUrl = "https://calendly.com/brunocarvalho452/reuniao-estrategica-bruno-carvalho";
 
   return (
     <div className="text-center space-y-6 quiz-pop">
