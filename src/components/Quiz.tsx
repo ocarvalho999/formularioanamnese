@@ -216,6 +216,7 @@ export default function Quiz() {
     if (step === 0) {
       if (!validateLead()) return;
       fbq("track", "CompleteRegistration");
+      fbq("track", "Lead");
       playPing(740);
       setFeedback("Ótimo! Você está na Etapa 2 de 5 🚀");
       setTimeout(() => setFeedback(null), 1600);
@@ -224,7 +225,7 @@ export default function Quiz() {
     }
     if (currentQuestion && !currentAnswered) return;
     if (step < TOTAL_QUESTIONS) {
-      if (step === 3) fbq("track", "ViewContent");
+      if (step === 3) { fbq("track", "ViewContent"); fbq("trackCustom", "QuizHalfway"); }
       const msg = ENCOURAGEMENTS[Math.min(step - 1, ENCOURAGEMENTS.length - 1)];
       setFeedback(msg);
       setTimeout(() => setFeedback(null), 1500);
@@ -265,6 +266,7 @@ export default function Quiz() {
       // não bloqueia o fluxo se o envio falhar
     }
     fbq("trackCustom", "QuizCompleto", { score });
+    fbq("track", "SubmitApplication");
     setSubmitting(false);
     triggerCelebration();
     playPing(1100);
