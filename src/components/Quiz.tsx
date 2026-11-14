@@ -291,7 +291,7 @@ export default function Quiz() {
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
             Vamos descobrir o{" "}
-            <span className="text-gradient">potencial da sua clínica</span>
+            <span className="text-gradient">potencial do seu negócio</span>
           </h1>
           <p className="text-muted-foreground mt-3 text-sm sm:text-base">
             Responda 5 etapas rápidas e receba um plano de ação personalizado.
