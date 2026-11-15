@@ -52,7 +52,7 @@ const QUESTIONS: Question[] = [
     title: "Qual é o seu MAIOR desafio no momento para aumentar vendas?",
     subtitle: "Escolha o que mais te incomoda hoje",
     choices: [
-      { value: "leads", label: "Gerar leads", sub: "Ninguém me encontra", score: 3 },
+      { value: "leads", label: "Fechar mais clientes", sub: "Ninguém me encontra", score: 3 },
       { value: "conversao", label: "Converter leads em vendas", sub: "Visitam mas não compram", score: 3 },
       { value: "retencao", label: "Reter clientes", sub: "Perdi clientes antigos", score: 2 },
       { value: "comeco", label: "Não sei por onde começar", sub: "Tudo está confuso", score: 3 },
@@ -77,7 +77,7 @@ const QUESTIONS: Question[] = [
     choices: [
       { value: "muito-alto", label: "Sim! Quero saber como funciona", sub: "Pronto pra agir", score: 3 },
       { value: "alto", label: "Sim, mas preciso entender melhor", sub: "Interessado", score: 3 },
-      { value: "medio", label: "Talvez, depende de como funciona", sub: "Hesitante", score: 2 },
+      { value: "medio", label: "Preciso saber mais como funciona", sub: "Hesitante", score: 2 },
     ],
   },
   {
@@ -105,8 +105,8 @@ const QUESTIONS: Question[] = [
   {
     id: "fechamento",
     title:
-      "Se eu te mostrasse exatamente como uma clínica fechou 47 pacientes novos em menos de 48 dias, você se interessaria em saber mais detalhes em um bate papo breve de 10 minutos?",
-    subtitle: "Mesmo método, aplicado ao seu cenário",
+      "Se eu te mostrasse exatamente como uma clínica fechou 47 novos pacientes em menos de 48 dias, você se interessaria em saber mais detalhes?",
+    subtitle: "Isso demanda apenas 10 minutos de um bate papo breve e direto.",
     choices: [
       { value: "clonar", label: "Sim! Quero potencializar esses resultados", sub: "Pronto pra reunião", score: 3 },
       { value: "socio", label: "Sim, mas preciso confirmar com meu sócio", sub: "Decisão compartilhada", score: 3 },
