@@ -110,7 +110,6 @@ const QUESTIONS: Question[] = [
     choices: [
       { value: "clonar", label: "Sim! Quero potencializar esses resultados", sub: "Pronto pra reunião", score: 3 },
       { value: "socio", label: "Sim, mas preciso confirmar com meu sócio", sub: "Decisão compartilhada", score: 3 },
-      { value: "talvez", label: "Talvez, depende dos detalhes", sub: "Curioso", score: 2 },
     ],
   },
 ];
@@ -659,8 +658,10 @@ function FinalStep({ lead, isHotLead }: { lead: LeadData; isHotLead: boolean }) 
             ? "Analisando seu perfil, com a Metodologia 2X seu negócio é totalmente capacitado para atingir o marco de 47 novos pacientes marcados em menos de 48 dias! Agende agora um bate papo com nossa Equipe!"
             : "Seu perfil tem potencial. Vamos conversar rapidamente para entender como aplicar a estratégia certa na sua clínica."}
         </p>
-        <div className="mt-4 rounded-xl border border-primary/40 bg-primary/10 px-5 py-4 text-sm font-bold text-foreground max-w-lg mx-auto">
-          💰 VOCÊ PAGA METADE DO VALOR E OS OUTROS 50% SOMENTE DEPOIS DE BATERMOS A META DE 40 CLIENTES NOVOS
+        <div className="mt-4 rounded-xl border border-primary/40 bg-primary/10 px-5 py-4 text-sm text-foreground max-w-lg mx-auto text-left space-y-2">
+          <p className="font-bold">VOCÊ INVESTE APENAS 50% NA CONTRATAÇÃO.</p>
+          <p>Os outros 50%? Você só paga depois que atingirmos a meta de <strong>40 NOVOS CLIENTES</strong> para sua clínica.</p>
+          <p>É simples: parte do nosso resultado precisa aparecer antes de você quitar o investimento.</p>
         </div>
       </div>
 
