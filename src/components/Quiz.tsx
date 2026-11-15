@@ -72,12 +72,12 @@ const QUESTIONS: Question[] = [
   {
     id: "urgencia_interesse",
     title:
-      "Se você pudesse aumentar seu faturamento líquido em +R$40.000 nos próximos 90 dias, qual seria seu nível de interesse?",
+      "Você conseguindo 40 novos clientes em 45 dias com um sistema sem depender de indicações. Você teria interesse de saber mais?",
     subtitle: "Seja honesto — isso define se faz sentido conversarmos",
     choices: [
-      { value: "muito-alto", label: "Muito alto! Começaria já", sub: "Pronto pra agir", score: 3 },
-      { value: "alto", label: "Alto, mas preciso pensar", sub: "Interessado", score: 3 },
-      { value: "medio", label: "Médio, depende do investimento", sub: "Hesitante", score: 2 },
+      { value: "muito-alto", label: "Sim! Quero saber como funciona", sub: "Pronto pra agir", score: 3 },
+      { value: "alto", label: "Sim, mas preciso entender melhor", sub: "Interessado", score: 3 },
+      { value: "medio", label: "Talvez, depende de como funciona", sub: "Hesitante", score: 2 },
     ],
   },
   {
@@ -105,10 +105,10 @@ const QUESTIONS: Question[] = [
   {
     id: "fechamento",
     title:
-      "Se eu mostrasse exatamente como uma clínica saiu do prejuízo e faturou R$60mil+ em 90 dias, você gostaria de saber os detalhes na call?",
+      "Se eu te mostrasse exatamente como uma clínica fechou 47 pacientes novos em menos de 48 dias, você se interessaria em saber mais detalhes em um bate papo breve de 10 minutos?",
     subtitle: "Mesmo método, aplicado ao seu cenário",
     choices: [
-      { value: "clonar", label: "Sim! Quero clonar esse resultado", sub: "Pronto pra reunião", score: 3 },
+      { value: "clonar", label: "Sim! Quero potencializar esses resultados", sub: "Pronto pra reunião", score: 3 },
       { value: "socio", label: "Sim, mas preciso confirmar com meu sócio", sub: "Decisão compartilhada", score: 3 },
       { value: "talvez", label: "Talvez, depende dos detalhes", sub: "Curioso", score: 2 },
     ],
@@ -290,8 +290,8 @@ export default function Quiz() {
             Diagnóstico Faturamento 2x · Find Impulso
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
-            Vamos descobrir o{" "}
-            <span className="text-gradient">potencial do seu negócio</span>
+            <span className="text-gradient">40 clientes novos</span>{" "}
+            sem depender de indicação em 45 dias
           </h1>
           <p className="text-muted-foreground mt-3 text-sm sm:text-base">
             Responda 5 etapas rápidas e receba um plano de ação personalizado.
@@ -479,7 +479,7 @@ function LeadStep({
 
       <div className="grid sm:grid-cols-2 gap-4">
         <div className="space-y-2 sm:col-span-2">
-          <Label htmlFor="nome">Seu nome completo *</Label>
+          <Label htmlFor="nome">SEU NOME</Label>
           <Input
             id="nome"
             value={lead.nome}
@@ -656,9 +656,12 @@ function FinalStep({ lead, isHotLead }: { lead: LeadData; isHotLead: boolean }) 
         </h2>
         <p className="text-muted-foreground mt-3 max-w-lg mx-auto">
           {isHotLead
-            ? "Pela análise do seu perfil, com a estratégia certa você pode adicionar R$60 mil ou mais em faturamento nos próximos 90 dias. Agende agora um bate papo BREVE com nosso especialista."
+            ? "Analisando seu perfil, com a Metodologia 2X seu negócio é totalmente capacitado para atingir o marco de 47 novos pacientes marcados em menos de 48 dias! Agende agora um bate papo com nossa Equipe!"
             : "Seu perfil tem potencial. Vamos conversar rapidamente para entender como aplicar a estratégia certa na sua clínica."}
         </p>
+        <div className="mt-4 rounded-xl border border-primary/40 bg-primary/10 px-5 py-4 text-sm font-bold text-foreground max-w-lg mx-auto">
+          💰 VOCÊ PAGA METADE DO VALOR E OS OUTROS 50% SOMENTE DEPOIS DE BATERMOS A META DE 40 CLIENTES NOVOS
+        </div>
       </div>
 
       <div className="grid sm:grid-cols-3 gap-3 max-w-md mx-auto text-left">
@@ -694,9 +697,10 @@ function FinalStep({ lead, isHotLead }: { lead: LeadData; isHotLead: boolean }) 
         </a>
       </div>
 
-      <p className="text-xs text-muted-foreground pt-2">
-        ⚡ Vagas limitadas. Bruno atende pessoalmente apenas algumas clínicas por semana.
+      <p className="text-sm font-bold text-primary text-center pt-2">
+        ⚡ Vagas limitadas.
       </p>
     </div>
   );
 }
+
