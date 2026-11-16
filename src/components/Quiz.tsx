@@ -72,7 +72,7 @@ const QUESTIONS: Question[] = [
   {
     id: "urgencia_interesse",
     title:
-      "Com nosso sistema de implementação se você conseguisse 40 novos clientes em 45 dias sem depender de indicações. Você teria interesse em saber mais?",
+      "Com nosso sistema de implementação você vai conseguir +40 novos clientes em 45 dias sem depender de indicações. Você teria interesse em saber mais?",
     subtitle: "Seja honesto — isso define se faz sentido conversarmos",
     choices: [
       { value: "muito-alto", label: "Sim! Quero saber como funciona", sub: "Pronto pra agir", score: 3 },
